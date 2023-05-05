@@ -85,12 +85,11 @@ function App() {
       <div className="rounded-lg shadow-md p-4 w-80 mx-auto">
         <h2 className="text-xl font-bold mb-4">Balance</h2>
         <ul>
-          {Object.keys(balance).map((name: string) => {
-            const value = balance[name]
+          {Object.entries(balance).map(([name, value]) => {
             return (
               <li className="flex justify-between mb-2" key={name}>
                 <span>{name}</span>
-                <span className={`${value > 0 ? 'text-green-500' : 'text-red-500'}`}>{value}€</span>
+                <span className={`${value.value > 0 ? 'text-green-500' : 'text-red-500'}`}>{value.value}€</span>
               </li>
             )
           })}
