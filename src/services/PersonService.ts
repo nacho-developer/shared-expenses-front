@@ -1,6 +1,6 @@
 import { PersonRequest, PersonResponse } from "../pojo/Person"
 
-const URL_PERSONS = 'http://localhost:8085/api/v1/persons'
+const URL_PERSONS = 'https://shared-expense-back.netlify.app/api/v1/persons'
 
 async function getPersons(): Promise<PersonResponse[]> {
     const response = await fetch(URL_PERSONS, {

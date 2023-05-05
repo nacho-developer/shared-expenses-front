@@ -1,6 +1,6 @@
 import { CancelExpenseRequest, DeodorExpenseRequest, ExpenseRequest, ExpenseResponse } from "../pojo/Expense"
 
-const URL_EXPENSES = 'http://localhost:8085/api/v1/expenses'
+const URL_EXPENSES = 'https://shared-expense-back.netlify.app/api/v1/expenses'
 
 async function getExpenses(): Promise<ExpenseResponse[]> {
     const response = await fetch(URL_EXPENSES, {

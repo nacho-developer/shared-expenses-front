@@ -1,6 +1,6 @@
 import { BalanceResponse, Transaction } from "../pojo/Balance"
 
-const URL_BALANCE = 'http://localhost:8085/api/v1/balance'
+const URL_BALANCE = 'https://shared-expense-back.netlify.app/api/v1/balance'
 
 async function getBalance(): Promise<BalanceResponse[]> {
     const response = await fetch(URL_BALANCE, {
