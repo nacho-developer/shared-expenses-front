@@ -82,7 +82,6 @@ function App() {
         </div>
       </div>
 
-
       <div className="rounded-lg shadow-md p-4 w-80 mx-auto">
         <h2 className="text-xl font-bold mb-4">Balance</h2>
         <ul>
@@ -98,7 +97,6 @@ function App() {
         </ul>
       </div>
 
-
       <div className="flex justify-center flex-wrap mb-5">
         <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full' onClick={handlerClickBalanceAccurate}>Ver Balance Mejorado</button>
         {balanceAccurate.map((accurate, index) => {
@@ -110,8 +108,6 @@ function App() {
           )
         })}
       </div>
-
-
     </>
   )
 }

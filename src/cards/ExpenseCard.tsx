@@ -44,7 +44,8 @@ export function ExpenseCard(expense: { expense: ExpenseResponse }) {
         const form = event.currentTarget
         const formData = new FormData(form)
 
-        const deodorsIds = formData.getAll('deodorsIds')
+        const deodorsIds: number[] = Array.from(formData.getAll('deodors'))
+            .map((value: FormDataEntryValue) => Number(value))
 
         const deodorExpense: DeodorExpenseRequest = {
             expenseId: expense.expense.id,

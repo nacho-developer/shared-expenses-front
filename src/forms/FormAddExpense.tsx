@@ -25,15 +25,15 @@ export function FormAddExpense() {
         event.preventDefault()
         const form = event.currentTarget
         const formData = new FormData(form)
-        const payerId = formData.get('payerId')
-        const deodorsIds = formData.getAll('deodorsIds')
-        const description = formData.get('description')
-        const amount = formData.get('amount')
+
+        const deodorsIds: number[] = Array.from(formData.getAll('deodors'))
+            .map((value: FormDataEntryValue) => Number(value))
+
         const expense: ExpenseRequest = {
-            payerId,
-            deodorsIds,
-            description,
-            amount,
+            payerId: Number(formData.get('payerId')),
+            deodorsIds: deodorsIds,
+            description: formData.get('description') as string,
+            amount: Number(formData.get('amount')),
             date: new Date()
         };
         addExpense(expense)

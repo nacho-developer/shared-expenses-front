@@ -6,11 +6,12 @@ export function FormAddPerson() {
 
   const handleSubmitAddPerson = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
+
     const form = event.currentTarget
     const formData = new FormData(form)
-    const name = formData.get('personName')
+
     const person: PersonRequest = {
-      name
+      name: formData.get('personName') as string
     };
     addPerson(person)
     form.reset()
